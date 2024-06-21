@@ -11,7 +11,6 @@ use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\PegawaiController;
 
 
-// Route::get('/', [ProdukController::class, 'index'])->name('index');
 Route::get('/', [AktorController::class, 'login'])->name('login');
 Route::post('/masuk', [AktorController::class, 'masuk'])->name('masuk');
 Route::get('/daftar', [AktorController::class, 'daftar'])->name('daftar');
@@ -19,28 +18,6 @@ Route::post('/tambah_user', [AktorController::class, 'tambah_user'])->name('tamb
 Route::get('/lupa', [AktorController::class, 'lupa'])->name('lupa');
 Route::post('/pw_baru', [AktorController::class, 'pw_baru'])->name('pw_baru');
 Route::get('/logout', [AktorController::class, 'logout'])->name('logout');
-
-
-// Route::group(['middleware' => ['auth', 'cekRole:customer']], function () {
-//     Route::post('/beli', [PemesananController::class, 'beli'])->name('beli');
-//     Route::get('/beli_sekarang/{id}', [PemesananController::class, 'beli_sekarang'])->name('beli_sekarang');
-//     Route::get('/riwayat', [PemesananController::class,'riwayat'])->name('riwayat');
-//     Route::get('/riwayat/{id}', [PemesananController::class,'batal_pemesanan'])->name('batal_pemesanan');
-
-//     Route::post('/masuk_keranjang', [KeranjangController::class, 'masuk_keranjang'])->name('masuk_keranjang');
-//     Route::get('/list_keranjang', [KeranjangController::class,'list_keranjang'])->name('list_keranjang');
-//     Route::get('/hapus_keranjang/{id}', [KeranjangController::class,'hapus_keranjang'])->name('hapus_keranjang');
-//     Route::get('/checkout/{id}', [KeranjangController::class,'checkout'])->name('checkout');
-
-//     Route::get('/info_beli', [InformasiController::class, 'info_beli'])->name('info_beli');
-//     Route::get('/info_bayar', [PembayaranController::class, 'info_bayar'])->name('info_bayar');
-
-//     Route::get('/profile/{id}/edit', [AktorController::class,'update_user'])->name('update_user');
-//     Route::post('/profile/{id}/edit', [AktorController::class, 'edit_gambar'])->name('edit_gambar');
-//     Route::post('/update_user', [AktorController::class,'edit_user'])->name('edit_user');
-//     Route::post('/profile/{id}/ubah_pw', [AktorController::class,'ubah_pw'])->name('ubah_pw');
-
-// });
 
 
 Route::group(['middleware' => ['auth', 'cekRole:admin']], function () {
