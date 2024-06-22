@@ -15,11 +15,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Pegawai</h1>
+            <h1>Edit Pegawai</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                    <li class="breadcrumb-item active">Pegawai</li>
+                    <li class="breadcrumb-item">Pegawai</li>
+                    <li class="breadcrumb-item active">Edit Pegawai</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -36,7 +37,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center my-2">
-                                <h5 class="card-title">Daftar Pegawai</h5>
+                                <h5 class="card-title">Edit Pegawai</h5>
                             </div>
                             <form action="{{ route('edit_pegawai', ['id' => $pegawai->id]) }}" id="rooms-setting" method="post" enctype="multipart/form-data">
                                 @csrf

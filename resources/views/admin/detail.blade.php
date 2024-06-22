@@ -19,6 +19,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item">Pegawai</li>
                     <li class="breadcrumb-item active">Detail Pegawai</li>
                 </ol>
             </nav>
