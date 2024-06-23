@@ -32,7 +32,7 @@
                 <img src="{{ asset('assets/img/admin.png') }}" class="img-fluid rounded zoom-on-hover" style="width: 300px;">
             </div>
             <div class="col-md-6">
-                <form action="/masuk" method="POST">
+                <form action="/masuk" method="POST" id="loginForm">
                     @csrf
                     <div class="header-text mb-4">
                         <h3 class="text-center">SIGN IN</h3>
@@ -43,13 +43,22 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
+                    @if (session()->has('error'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
+                    <!-- Error message container -->
+                    <div id="errorMessages" class="alert alert-danger" style="display:none;"></div>
                     <div class="input-group mb-3">
                         <label for="email" class="w-100 fw-bold">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Your Email" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <label for="password" class="w-100 fw-bold">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Your Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Your Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3 d-flex justify-content-between align-items-center">
                         <div class="form-check">
@@ -64,28 +73,29 @@
                         <button type="submit" class="btn btn-success btn-lg w-100 fs-6"> Login </button>
                     </div>
                     <div class="input-group mb-3">
-                        <p class="text-center w-100">Belum punya akun? <a href="/daftar">Daftar</a></p>
+                        <p class="text-center w-100">Belum punya akun? <a href="/daftar" class="link-underline link-underline-opacity-0">Daftar</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-        <!-- Vendor JS Files -->
-        <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <!-- Main JS File -->
-        <script src="{{ asset('assets/js/main.js')}}"></script>
-        <script type="application/json" class="swiper-config">
-            {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                "delay": 2000
-                },
-                "slidesPerView": 1
-            }
-        </script>
+    <!-- Main JS File -->
+    <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script type="application/json" class="swiper-config">
+        {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+            "delay": 2000
+            },
+            "slidesPerView": 1
+        }
+    </script>
   </body>
 </html>

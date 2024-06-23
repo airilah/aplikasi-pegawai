@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Pesan;
-use App\Models\Keranjang;
-use App\Models\Pemesanan;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

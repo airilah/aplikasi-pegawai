@@ -4,8 +4,29 @@
         @include('template.head')
     </head>
   <body>
+    <section id="hero" class="hero section bg-swiper">
+        <div class="container-fluid">
+            <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/img/slider1.jpg') }}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/img/slider2.jpg') }}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/img/slider3.jpg') }}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/img/slider4.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-grey"></div>
 
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container container-login d-flex justify-content-center align-items-center min-vh-100">
         <div class="row border rounded-5 m-2 p-3 bg-white shadow w-80">
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column img-konten">
                 <img src="{{ asset('assets/img/admin.png') }}" class="img-fluid rounded zoom-on-hover" style="width: 300px;">
@@ -53,11 +74,27 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <p class="text-center w-100">Sudah ingat password? <a href="/">Login</a></p>
+                        <p class="text-center w-100">Sudah ingat password? <a href="/" class="link-underline link-underline-opacity-0">Login</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+    <!-- Main JS File -->
+    <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script type="application/json" class="swiper-config">
+        {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+            "delay": 2000
+            },
+            "slidesPerView": 1
+        }
+    </script>
   </body>
 </html>

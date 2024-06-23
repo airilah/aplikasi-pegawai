@@ -32,7 +32,6 @@ class Pegawai extends Model
     public function status() {
         return $this->belongsTo(Status::class);
     }
-
     public function pendidikan() {
         return $this->belongsTo(Pendidikan::class);
     }
